@@ -200,22 +200,22 @@ function callSendAPI(senderPsid, response) {
 }
 
 // Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/chain.pem', 'utf8');
+// const privateKey = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/privkey.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/cert.pem', 'utf8');
+// const ca = fs.readFileSync('/etc/letsencrypt/live/escaler.com.br/chain.pem', 'utf8');
 
-const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
-};
+// const credentials = {
+// 	key: privateKey,
+// 	cert: certificate,
+// 	ca: ca
+// };
 
-const httpsServer = https.createServer(credentials, app);
-httpsServer.listen(2095, () => {
-	console.log('HTTPS Server running on port 2095');
-});
+// const httpsServer = https.createServer(credentials, app);
+// httpsServer.listen(2095, () => {
+// 	console.log('HTTPS Server running on port 2095');
+// });
 
 // listen for requests :)
-// var listener = app.listen(2095, function() {
-//   console.log('Your app is listening on port ' + listener.address().port);
-// });
+var listener = app.listen(80, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
